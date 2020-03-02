@@ -1,0 +1,229 @@
+
+.nav_top {
+  // width: 700px;
+  // float: left;
+  > ul {
+    display: flex;
+    padding: 20px 0;
+    // width: 700px;
+    margin-left: 80px;
+    margin-top: 20px;
+
+    > li {
+      padding: 0 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+
+.nav_box {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  display: none;
+  position: absolute;
+  top: 140px;
+  z-index: 9999;
+  background-color: #FFF;
+  width: 1226px;
+  height: 220px;
+  > ul {
+    display: flex;
+    // padding-left: 50px;
+    > li {
+      flex: 1;
+      padding-top: 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid #333;
+        margin-bottom: 15px;
+
+        img {
+          width: 160px;
+          height: 110px;
+          display: block;
+          text-align: center;
+        }
+      }
+
+      > p {
+        margin-bottom: 5px;
+      }
+      > span{
+        color: orange;;
+      }
+
+      &:last-child {
+
+        > div {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+// 轮播图左边样式
+.lbt_l{
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  background:rgba(0, 0, 0, 0.3);
+  margin-top: -460px;
+  z-index: 10000;
+  > ul{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    > li{
+      flex: 1;
+      padding-top: 15px;
+      padding-left: 30px;
+      cursor: pointer;
+      color: #fff;
+      &:hover{
+        background-color: orangered;
+      }
+    }
+  }
+}
+
+.lbt_r{
+  display: none;
+  position: absolute;
+  width: 1026px;
+  height: 100%;
+  background-color:#fff;
+  z-index: 10000;
+  margin-top: -460px;
+  margin-left: 200px;
+
+  > ul{
+    overflow: hidden;
+    height: 100%;
+    >li{
+      float: left;
+      display: flex;
+      width: 250px;
+      // justify-content: space-around;
+      align-items: center;
+      padding: 20px 20px;
+      cursor: pointer;
+      >div{
+        img{
+          display: block;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      >span{
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+// 小轮播图
+.lbt_small_box{
+  width: 986px;
+  height: 350px;
+  // background-color: red;
+  float: left;
+}
+.lbt_small_1{
+  height: 100%;
+}
+.sw5{
+  ul{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    // background-color: pink;
+    // margin-top: -10px;
+    justify-content: space-around;
+    li{
+      display: block;
+      width: 240px;
+      height: 100%;
+      text-align: center;
+      p{
+        margin-top: 250px;
+      }
+      &:hover{cursor: pointer;}
+      &:nth-of-type(1){
+        background:#fff url(../images/s1.png) no-repeat 45px 50px;
+        background-size: 150px;
+        
+      }
+      &:nth-of-type(2){
+        background:#fff url(../images/s2.jpg) no-repeat 45px 50px;
+        background-size: 150px;
+      }
+      &:nth-of-type(3){
+        background:#fff url(../images/s3.jpg) no-repeat 45px 50px;
+        background-size: 150px;
+      }
+      &:nth-of-type(4){
+        background:#fff url(../images/s4.jpg) no-repeat 45px 50px;
+        background-size: 150px;
+      }
+      
+    }
+  }
+}
+.sw6{
+  ul{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    // background-color: pink;
+    // margin-top: -10px;
+    justify-content: space-around;
+    li{
+      display: block;
+      width: 240px;
+      height: 100%;
+      text-align: center;
+      p{
+        margin-top: 250px;
+      }
+      &:hover{cursor: pointer;}
+      &:nth-of-type(1){
+        background:#fff url(../images/s5.jpg) no-repeat 45px 50px;
+        background-size: 150px;
+        
+      }
+      &:nth-of-type(2){
+        background:#fff url(../images/s6.jpg) no-repeat 45px 50px;
+        background-size: 150px;
+      }
+      &:nth-of-type(3){
+        background:#fff url(../images/s7.jpg) no-repeat 45px 50px;
+        background-size: 150px;
+      }
+      &:nth-of-type(4){
+        background:#fff url(../images/s8.jpg) no-repeat 45px 50px;
+        background-size: 150px;
+      }
+      
+    }
+  }
+}
+
+// photo
+.photo{
+  height: 120px;
+  margin-top: 30px;
+  background: url(../images/hs.webp) no-repeat;
+}
+
+
+

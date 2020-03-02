@@ -31,6 +31,14 @@ const cssHandler = () => {
              .pipe(cssmin())  // 压缩 css 代码
              .pipe(gulp.dest('./dist/css'))  // 压缩完毕的 css 代码放在 dist 目录下的 css 文件夹里面
 }
+// 打包 sass 的方法
+const sassHandler = () => {
+  return gulp.src('./src/sass/*.scss')
+            .pipe(sass())
+            .pipe(autoprefixer())
+            .pipe(cssmin())
+            .pipe(gulp.dest('./dist/sass'))
+}
 
 // 3. 书写一个打包 js 的方法
 const jsHandler = () => {
@@ -98,13 +106,13 @@ const serverHandler = () => {
              })) // 开启服务器
 }
 
-const sassHandler = () => {
-  return gulp.src('./src/sass/*.scss')
-            .pipe(sass())
-            .pipe(autoprefixer())
-            .pipe(cssmin())
-            .pipe(gulp.dest('./dist/sass'))
-}
+// const sassHandler = () => {
+//   return gulp.src('./src/sass/*.scss')
+//             .pipe(sass())
+//             .pipe(autoprefixer())
+//             .pipe(cssmin())
+//             .pipe(gulp.dest('./dist/sass'))
+// }
 
 // 9. 自动监控文件
 //    监控 src 下下面的文件, 只要一修改, 就执行对应的任务
@@ -116,7 +124,7 @@ const watchHandler = () => {
   gulp.watch('./src/pages/*.html', htmlHandler)
   gulp.watch('./src/lib/**', libHandler)
   gulp.watch('./src/images/**', imgHandler)
-  gulp.watch('./src/sass/*.scss', sass)
+  gulp.watch('./src/sass/*.scss', sassHandler)
 }
 
 
