@@ -159,7 +159,7 @@ function getTwo(n){
 // 获取到页面这元素
 var nums = document.getElementsByClassName('num');
 // 声明未来时间
-var future_time = new Date('2020-3-3 21:55:50');
+var future_time = new Date('2020-3-7 21:55:50');
 function print_time(){
     // 声明现在时间
     var now_time = new Date();
@@ -189,7 +189,7 @@ var timer = setInterval(print_time,1000);
 // 小轮播图第一个
 var mySwiper = new Swiper ('.lbt_small_1', {
   // direction: 'vertical', // 垂直切换选项
-  // loop: true, // 循环模式选项
+  loop: true, // 循环模式选项
   
   // 如果需要分页器
   pagination: {
@@ -202,13 +202,69 @@ var mySwiper = new Swiper ('.lbt_small_1', {
     prevEl: '.swiper-button-prev',
   },
   
-})        
+})     
 
 
 
 
 
+// 第五部分
+five()
 
+function five() {
+  $.ajax({
+    url: '../lib/main1.json',
+    dataType: 'json',
+    success: function (res) {
+      console.log(res)
+
+      // 1. 准备一个空字符串
+      let str = ''
+
+      // 2. 渲染
+      res.forEach(item => {
+        str += `
+        <li>
+            <img src="${item.list_url}" alt="">
+            <p>${item.list_name}</p>
+            <span>${item.list_js}</span>
+            <h6>${item.list_price}</h6>
+          </li>
+        `
+      })
+
+      // 3. 填充到 nav_top 里面的 ul 里面
+      $('.m52 > ul')
+        .html(str)
+    }
+  })
+}
+
+
+// 回到顶部
+$(window).scroll(() => {
+  // 通过判断卷去的高度来决定
+  if ($(window).scrollTop() >= 300) {
+    // 让回到顶部按钮显示
+    $('.back_top').fadeIn()
+  } else {
+    // 让回到顶部按钮隐藏
+    $('.back_top').fadeOut()
+  }
+})
+$('.back_top').click(function(){
+  // $(window).scrollTop(0)
+  $('html').animate({
+    scrollTop: 0
+  }, 1000)
+})
+
+  
+//跳转到列表页面
+$('.swiper-wrapper').click(function(){
+  event.stopPropagation();//阻止事件传播
+  window.location.href="http://www.yzq.com:8080/pages/list.html";
+})
 
 
 
