@@ -42,10 +42,14 @@ $('.btn_dl').on('click',function(e){
         var res = JSON.parse(xhr.responseText)
         
         if (res.code === 0) {
+            // 清空表单
+            $('#listForm')[0].reset();
             // 提示错误
             // 让这个 span 标签显示出来就可以了
             errorInfo.style.display = 'block'
+            
         } else {
+            //登录成功之后去到主页
             window.location.href = './index.html'
         }
     }
@@ -95,7 +99,10 @@ $('.btn_zc').on('click',function(e){
         console.log( xhr.responseText);
         // console.log(res);
         // var res = JSON.parse(xhr.responseText)
-        alert('注册成功')
+        // 清空表单
+        window.location.reload()
+
+        alert('注册成功，请登录')
     }
 
     // 4-4. 设置请求头
