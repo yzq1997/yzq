@@ -159,7 +159,7 @@ function getTwo(n){
 // 获取到页面这元素
 var nums = document.getElementsByClassName('num');
 // 声明未来时间
-var future_time = new Date('2020-3-7 21:55:50');
+var future_time = new Date('2020-3-11 12:00:00');
 function print_time(){
     // 声明现在时间
     var now_time = new Date();
